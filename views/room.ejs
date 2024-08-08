@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" defer></script>
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="script.js" defer></script>
-    <title>Document</title>
+    <title>Video Call</title>
     <style>
         #video-grid {
             display: grid;
@@ -30,6 +30,7 @@
     </style>
 </head>
 <body>
+    <button id="logout-button" onclick="location.href = '/logout';">Logout</button>
     <div id="video-grid"></div>
 </body>
 </html>
