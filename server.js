@@ -2,18 +2,24 @@ const express = require("express");
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
+require('dotenv').config();
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 const { requiresAuth } = require('express-openid-connect');
 const { auth } = require('express-openid-connect');
 
+console.log(process.env.AUTH0_SECRET);
+console.log(process.env.AUTH0_BASEURL);
+console.log(process.env.AUTH0_CLIENTID);
+console.log(process.env.AUTH0_ISSUERBASEURL);
+
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: 'ahgjfhgahfgiurhaerngjancnvbajdfhbuarjnanrjgkalrjgnanjergaekrgbarhak',
-  baseURL: 'http://localhost:3000',
-  clientID: 'bPFr0KH8F9zgIOeFu3yrMAJsbHR5neN5',
-  issuerBaseURL: 'https://dev-ks0tfjwi7e8p3bp2.us.auth0.com'
+  secret: `${process.env.AUTH0_SECRET}`,
+  baseURL: process.env.AUTH0_BASEURL,
+  clientID: `${process.env.AUTH0_CLIENTID}`,
+  issuerBaseURL: `${process.env.AUTH0_ISSUERBASEURL}`
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
