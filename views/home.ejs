@@ -6,20 +6,12 @@
     <title>Video Call</title>
     <style>
         body {
-            background-color: rgb(103, 106, 255);
+            background-color:cadetblue;
             color: rgb(0, 0, 0);
-        }
-
-        h1 {
-            text-align: center;
-        }
-        button {
-            text-align: center;
         }
     </style>
 </head>
 <body>
-    <h1>Par Hills Media Video Call</h1>
-    <button onclick="location.href = '/login';">Login</button>
+    <%- include('includes/header', { user: user }); %>
 </body>
 </html>

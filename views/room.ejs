@@ -11,11 +11,17 @@
     <script src="script.js" defer></script>
     <title>Video Call</title>
     <style>
+        body {
+            background-color:cadetblue;
+            color: rgb(0, 0, 0);
+        }
+        
         #video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, 300px);
             grid-auto-rows: 300px;
             grid-gap: 25px;
+            padding: 1em;
         }
 
         video {
@@ -30,7 +36,7 @@
     </style>
 </head>
 <body>
-    <button id="logout-button" onclick="location.href = '/logout';">Logout</button>
+    <%- include('includes/header', { user: user }); %>
     <div id="video-grid"></div>
 </body>
 </html>

@@ -35,11 +35,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 app.get("/call", requiresAuth(), (req, res) => {
-  res.render("room", { roomId: req.params.room });
+  res.render("room", { roomId: req.params.room, user: req.oidc.user });
 });
 
 app.get("/home", (req, res) => {
-  res.render("home");
+  res.render("home", { user: req.oidc.user  });
 });
 
 io.on("connection", socket => {
