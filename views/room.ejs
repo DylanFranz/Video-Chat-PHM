@@ -9,10 +9,11 @@
     <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js" defer></script>
     <script src="/socket.io/socket.io.js" defer></script>
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/728205072d.js" crossorigin="anonymous"></script>
     <title>Video Call</title>
     <style>
         body {
-            background-color:cadetblue;
+            background-color:darkgray;
             color: rgb(0, 0, 0);
         }
         
@@ -22,6 +23,17 @@
             grid-auto-rows: 300px;
             grid-gap: 25px;
             padding: 1em;
+        }
+
+        #round-button {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        
+        #icon {
+            font-size:xx-large;
         }
 
         video {
@@ -36,7 +48,9 @@
     </style>
 </head>
 <body>
-    <%- include('includes/header', { user: user }); %>
     <div id="video-grid"></div>
+    <div id="bottom-bar">
+        <button onclick="location.href = '/logout';" id="round-button"><i class="fa-solid fa-phone-slash" id="icon"></i></button>
+    </div>
 </body>
 </html>
